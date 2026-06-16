@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { liveApps, appPlansMap } from "@/app/data/apps";
+import { pricingNotes } from "@/app/data/site-content";
 import { FadeIn } from "./motion";
 
 export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
@@ -27,8 +28,7 @@ export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
             </>
           )}
           <p className={`mx-auto max-w-lg text-muted ${hideHeader ? "" : "mt-4"}`}>
-            Billed through Shopify. 7-day free trial on all paid plans. Cancel
-            anytime from your Shopify admin.
+            {pricingNotes.billing}. {pricingNotes.trial}. {pricingNotes.cancel}.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-2">
@@ -75,7 +75,9 @@ export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
               }`}
             >
               Annual
-              <span className="ml-1.5 text-xs text-emerald-500">-17%</span>
+              <span className="ml-1.5 text-xs text-emerald-500">
+                -{pricingNotes.annualDiscountPercent}%
+              </span>
             </button>
           </div>
         </FadeIn>
@@ -153,7 +155,7 @@ export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
 
         <FadeIn delay={0.2}>
           <p className="mt-10 text-center text-sm text-muted">
-            Secure billing via Shopify · 7-day free trial · Cancel anytime ·{" "}
+            Secure billing via Shopify · {pricingNotes.trial} · {pricingNotes.cancel} ·{" "}
             <Link href="/refund" className="text-accent hover:underline">
               Refund policy
             </Link>

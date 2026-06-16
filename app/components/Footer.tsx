@@ -2,23 +2,17 @@
 
 import Link from "next/link";
 import { Logo } from "@/app/components/Logo";
-
-const companyLinks = [
-  { label: "About", href: "/about" },
-  { label: "Our Apps", href: "/apps" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "/contact" },
-];
-
-const resourceLinks = [
-  { label: "Documentation", href: "#" },
-  { label: "Shopify App Store", href: "https://apps.shopify.com/", external: true },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Refund Policy", href: "/refund" },
-];
+import {
+  company,
+  emails,
+  footerCompanyLinks,
+  footerResourceLinks,
+} from "@/app/data/site-content";
 
 export function Footer() {
+  const year = new Date().getFullYear();
+  const hq = company.headquarters;
+
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-16">
@@ -28,18 +22,32 @@ export function Footer() {
               <Logo size="md" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              A Shopify app studio. We design, build, and publish apps that help
-              merchants run better stores.
+              {company.shortDescription}
             </p>
-            <p className="mt-3 text-xs text-muted">Shopify App Partner</p>
+            <p className="mt-3 text-xs text-muted">{company.partnerLabel}</p>
+            <p className="mt-2 text-xs leading-relaxed text-muted">
+              📍 {hq.street}
+              <br />
+              {hq.city}, {hq.state} {hq.zip}
+            </p>
+            <a
+              href={`tel:${company.phone.tel}`}
+              className="mt-2 block text-xs text-accent hover:underline"
+            >
+              {company.phone.display}
+            </a>
+            <a
+              href={`mailto:${emails.hello}`}
+              className="mt-1 block text-xs text-accent hover:underline"
+            >
+              {emails.hello}
+            </a>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider">
-              Company
-            </h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider">Company</h4>
             <ul className="mt-4 space-y-3">
-              {companyLinks.map((link) => (
+              {footerCompanyLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -53,13 +61,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider">
-              Legal
-            </h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider">Resources</h4>
             <ul className="mt-4 space-y-3">
-              {resourceLinks.map((link) => (
+              {footerResourceLinks.map((link) => (
                 <li key={link.label}>
-                  {link.external ? (
+                  {"external" in link && link.external ? (
                     <a
                       href={link.href}
                       target="_blank"
@@ -82,11 +88,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider">
-              Get updates
-            </h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider">Get updates</h4>
             <p className="mt-4 text-sm text-muted">
-              New app launches, Shopify tips, and product updates.
+              New app launches, Shopify tips, and product updates from {company.shortName}.
             </p>
             <form className="mt-4 flex gap-2" onSubmit={(e) => e.preventDefault()}>
               <input
@@ -101,12 +105,13 @@ export function Footer() {
                 Subscribe
               </button>
             </form>
+            <p className="mt-2 text-xs text-muted">No spam. Unsubscribe anytime.</p>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted">
-            © 2024–2026 Omnitech. All rights reserved.
+            © {company.founded}–{year} {company.name} All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted">
             <Link href="/privacy" className="hover:text-foreground">

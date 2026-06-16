@@ -3,31 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeIn, Stagger, StaggerItem } from "@/app/components/motion";
-
-const values = [
-  {
-    title: "Merchant-first",
-    description:
-      "Every app starts with a real merchant problem. We build tools that save time and drive revenue—not feature bloat.",
-  },
-  {
-    title: "Shopify-native",
-    description:
-      "Polaris UI, embedded apps, GraphQL APIs. Our apps feel like a natural part of Shopify admin.",
-  },
-  {
-    title: "Ship & support",
-    description:
-      "We publish to the App Store and stand behind every app with fast, human support.",
-  },
-];
-
-const stats = [
-  { value: "4+", label: "Apps built" },
-  { value: "1K+", label: "Store installs" },
-  { value: "30+", label: "Countries" },
-  { value: "4.9★", label: "Avg. rating" },
-];
+import { company, companyStats, companyValues } from "@/app/data/site-content";
 
 export function AboutContent() {
   return (
@@ -37,20 +13,23 @@ export function AboutContent() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <FadeIn>
               <h2 className="font-display text-3xl font-bold md:text-4xl">
-                A Shopify app studio from Bangladesh
+                {company.aboutTitle}
               </h2>
-              <p className="mt-4 leading-relaxed text-muted">
-                Omnitech is a small, focused team building Shopify apps for
-                merchants worldwide. We design, develop, and publish apps on
-                the Shopify App Store—helping store owners automate workflows,
-                save time, and grow their business.
+              {company.aboutParagraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="mt-4 leading-relaxed text-muted">
+                  {paragraph}
+                </p>
+              ))}
+              <p className="mt-4 text-sm text-muted">
+                📍 {company.headquarters.street}, {company.headquarters.city},{" "}
+                {company.headquarters.state} {company.headquarters.zip}
               </p>
-              <p className="mt-4 leading-relaxed text-muted">
-                From order notifications to bulk editing and review collection,
-                each app solves one problem really well. We believe the best
-                Shopify apps are simple, reliable, and built with merchants in
-                mind.
-              </p>
+              <a
+                href={`tel:${company.phone.tel}`}
+                className="mt-1 block text-sm text-accent hover:underline"
+              >
+                {company.phone.display}
+              </a>
             </FadeIn>
 
             <FadeIn delay={0.15} direction="left">
@@ -59,7 +38,7 @@ export function AboutContent() {
                   Our mission
                 </p>
                 <p className="font-display mt-4 text-2xl font-bold leading-snug">
-                  Build Shopify apps that merchants actually love to use.
+                  {company.mission}
                 </p>
                 <Link
                   href="/apps"
@@ -72,13 +51,16 @@ export function AboutContent() {
           </div>
 
           <Stagger className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {stats.map((stat) => (
+            {companyStats.slice(0, 4).map((stat) => (
               <StaggerItem key={stat.label}>
                 <motion.div
                   whileHover={{ y: -4 }}
                   className="rounded-2xl border border-border bg-surface p-6 text-center"
                 >
-                  <p className="font-display text-3xl font-bold">{stat.value}</p>
+                  <p className="font-display text-3xl font-bold">
+                    {stat.value}
+                    {"suffix" in stat ? stat.suffix : ""}
+                  </p>
                   <p className="mt-1 text-sm text-muted">{stat.label}</p>
                 </motion.div>
               </StaggerItem>
@@ -93,7 +75,7 @@ export function AboutContent() {
             <h2 className="font-display text-3xl font-bold">What we believe</h2>
           </FadeIn>
           <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
-            {values.map((value) => (
+            {companyValues.map((value) => (
               <StaggerItem key={value.title}>
                 <div className="rounded-2xl border border-border bg-background p-6">
                   <h3 className="font-display text-lg font-semibold text-accent">
@@ -109,13 +91,37 @@ export function AboutContent() {
         </div>
       </section>
 
+      <section className="border-t border-border py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <FadeIn className="text-center">
+            <h2 className="font-display text-3xl font-bold">Our offices</h2>
+            <p className="mx-auto mt-3 max-w-lg text-muted">
+              Headquartered in South Dakota with a national client base.
+            </p>
+          </FadeIn>
+          <Stagger className="mt-10 grid gap-6 md:grid-cols-2">
+            {company.offices.map((office) => (
+              <StaggerItem key={office.label}>
+                <div className="rounded-2xl border border-border bg-surface p-6">
+                  <p className="text-sm font-semibold text-accent">{office.label}</p>
+                  <p className="font-display mt-2 text-lg font-semibold">{office.street}</p>
+                  <p className="mt-1 text-muted">
+                    {office.city}, {office.state} {office.zip}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <FadeIn>
             <h2 className="font-display text-3xl font-bold">Want to work with us?</h2>
             <p className="mx-auto mt-4 max-w-lg text-muted">
-              Whether you need a custom Shopify app or have feedback on our
-              products—we&apos;d love to hear from you.
+              Whether you need a custom Shopify app, want to partner with us, or have
+              feedback on our products—we&apos;d love to hear from you.
             </p>
             <Link
               href="/contact"

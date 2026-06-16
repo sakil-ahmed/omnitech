@@ -7,6 +7,7 @@ import type { App } from "@/app/data/apps";
 import { apps } from "@/app/data/apps";
 import { AppIcon, AppIconBox } from "@/app/components/AppIcon";
 import { FadeIn, Stagger, StaggerItem } from "@/app/components/motion";
+import { company, emails, pricingNotes } from "@/app/data/site-content";
 
 type AppDetailProps = {
   app: App;
@@ -108,7 +109,7 @@ export function AppDetail({ app }: AppDetailProps) {
                     </motion.a>
                   ) : (
                     <motion.a
-                      href="mailto:hello@omnitech.dev?subject=Stock Alert Waitlist"
+                      href={`mailto:${emails.hello}?subject=Stock Alert Waitlist`}
                       whileHover={{ scale: 1.04, y: -2 }}
                       whileTap={{ scale: 0.97 }}
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-violet-500 to-purple-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl"
@@ -225,7 +226,7 @@ export function AppDetail({ app }: AppDetailProps) {
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">Pricing</p>
             <h2 className="font-display mt-2 text-3xl font-bold md:text-4xl">Choose your plan</h2>
             <p className="mx-auto mt-3 max-w-md text-muted">
-              Billed through Shopify · 7-day free trial · Cancel anytime
+              {pricingNotes.billing} · {pricingNotes.trial} · {pricingNotes.cancel}
             </p>
 
             <div className="mt-6 inline-flex rounded-full border border-border bg-background p-1">
@@ -241,7 +242,11 @@ export function AppDetail({ app }: AppDetailProps) {
                   )}
                   <span className="relative z-10">
                     {opt.label}
-                    {opt.val && <span className="ml-1 text-xs text-emerald-400">-17%</span>}
+                    {opt.val && (
+                      <span className="ml-1 text-xs text-emerald-400">
+                        -{pricingNotes.annualDiscountPercent}%
+                      </span>
+                    )}
                   </span>
                 </button>
               ))}
@@ -342,7 +347,7 @@ export function AppDetail({ app }: AppDetailProps) {
         <section className="border-t border-border bg-surface py-20">
           <div className="mx-auto max-w-6xl px-6">
             <FadeIn>
-              <h2 className="font-display text-2xl font-bold">More Omnitech apps</h2>
+              <h2 className="font-display text-2xl font-bold">More {company.name} apps</h2>
               <p className="mt-2 text-muted">Explore our other Shopify apps</p>
             </FadeIn>
             <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

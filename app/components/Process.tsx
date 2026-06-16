@@ -2,64 +2,32 @@
 
 import { motion } from "framer-motion";
 import { FadeIn, Stagger, StaggerItem } from "./motion";
-
-const steps = [
-  {
-    step: "01",
-    title: "Research & Design",
-    description:
-      "We study merchant pain points, review App Store gaps, and design apps that solve one workflow exceptionally well.",
-    icon: "🔍",
-  },
-  {
-    step: "02",
-    title: "Build & Test",
-    description:
-      "Using Shopify CLI, Polaris, and GraphQL APIs—we build embedded apps tested on real dev stores before launch.",
-    icon: "⚡",
-  },
-  {
-    step: "03",
-    title: "App Store Review",
-    description:
-      "We handle listing copy, screenshots, privacy policy, and Shopify's review process so your app goes live smoothly.",
-    icon: "🚀",
-  },
-  {
-    step: "04",
-    title: "Launch & Support",
-    description:
-      "Post-launch we monitor reviews, ship updates, and provide fast support so merchants stay happy and subscribed.",
-    icon: "💬",
-  },
-];
+import { processSteps } from "@/app/data/site-content";
 
 export function Process() {
   return (
     <section id="process" className="bg-grid relative overflow-hidden py-24">
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-            Our Process
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">Our process</p>
           <h2 className="font-display mt-2 text-3xl font-bold tracking-tight md:text-4xl">
             From idea to App Store
           </h2>
           <p className="mt-4 text-lg text-muted">
-            We follow Shopify&apos;s best practices at every step—so our apps
-            pass review, perform well, and earn merchant trust.
+            We follow Shopify&apos;s best practices at every step—so our apps pass review,
+            perform well, and earn merchant trust.
           </p>
         </FadeIn>
 
         <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((item, index) => (
+          {processSteps.map((item, index) => (
             <StaggerItem key={item.step}>
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
                 className="group relative"
               >
-                {index < steps.length - 1 && (
+                {index < processSteps.length - 1 && (
                   <div className="absolute top-10 left-[calc(100%-8px)] z-0 hidden h-px w-[calc(100%-16px)] lg:block">
                     <motion.div
                       initial={{ scaleX: 0 }}
@@ -80,9 +48,7 @@ export function Process() {
                   <h3 className="font-display mt-4 text-lg font-semibold group-hover:text-accent">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {item.description}
-                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
                 </div>
               </motion.div>
             </StaggerItem>

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { apps } from "@/app/data/apps";
 import { AppIconBox } from "@/app/components/AppIcon";
 import { FadeIn, Stagger, StaggerItem } from "@/app/components/motion";
+import { company } from "@/app/data/site-content";
 
 export function AppsListing() {
   return (
@@ -15,11 +16,10 @@ export function AppsListing() {
           <FadeIn>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">Our Apps</p>
             <h1 className="font-display mt-2 text-4xl font-bold tracking-tight md:text-5xl">
-              Shopify apps by Omnitech
+              Shopify apps by {company.name}
             </h1>
             <p className="mt-4 max-w-xl text-lg text-muted">
-              Focused tools for Shopify merchants. Install from the App Store and
-              start using in minutes.
+              {company.shortDescription}
             </p>
           </FadeIn>
         </div>

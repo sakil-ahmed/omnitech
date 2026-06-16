@@ -1,7 +1,9 @@
+import { siteConfig } from "@/app/lib/site";
+
 export const privacyPolicy = {
   lastUpdated: "June 15, 2026",
   intro:
-    "Omnitech (\"we\", \"our\", or \"us\") respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you use our website and Shopify applications.",
+    "Omnitech, Inc. (\"we\", \"our\", or \"us\") respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you use our website and Shopify applications.",
   sections: [
     {
       title: "Information we collect",
@@ -39,7 +41,7 @@ export const privacyPolicy = {
     {
       title: "Your rights",
       content: [
-        "You may request access to, correction of, or deletion of your personal data by contacting support@omnitech.dev.",
+        `You may request access to, correction of, or deletion of your personal data by contacting ${siteConfig.email.support}.`,
         "If you are in the EU/EEA, you have rights under GDPR including data portability and the right to lodge a complaint with a supervisory authority.",
         "You can uninstall any Omnitech app at any time from your Shopify admin.",
       ],
@@ -54,7 +56,11 @@ export const privacyPolicy = {
     {
       title: "Contact us",
       content: [
-        "For privacy-related questions, email us at support@omnitech.dev or hello@omnitech.dev.",
+        `Omnitech, Inc. · ${siteConfig.company.headquarters.street}`,
+        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}`,
+        `Phone: ${siteConfig.company.phone.display}`,
+        `Email: ${siteConfig.email.support} (support) · ${siteConfig.email.hello} (general)`,
+        `Business hours: ${siteConfig.company.businessHours}`,
       ],
     },
   ],
@@ -121,14 +127,18 @@ export const termsOfService = {
     {
       title: "Governing law",
       content: [
-        "These Terms are governed by the laws of Bangladesh, without regard to conflict of law principles.",
-        "Any disputes shall be resolved in the courts of Dhaka, Bangladesh.",
+        "These Terms are governed by the laws of the State of South Dakota, United States, without regard to conflict of law principles.",
+        "Any disputes shall be resolved in the courts of Minnehaha County, South Dakota.",
       ],
     },
     {
       title: "Contact",
       content: [
-        "Questions about these Terms? Email hello@omnitech.dev.",
+        `Omnitech, Inc. · ${siteConfig.company.headquarters.street}`,
+        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}`,
+        `Phone: ${siteConfig.company.phone.display}`,
+        `Email: ${siteConfig.email.support} (support) · ${siteConfig.email.hello} (general)`,
+        `Business hours: ${siteConfig.company.businessHours}`,
       ],
     },
   ],
@@ -156,7 +166,7 @@ export const refundPolicy = {
     {
       title: "How to request a refund",
       content: [
-        "Email support@omnitech.dev with your store URL, app name, and reason for the refund request.",
+        `Email ${siteConfig.email.support} with your store URL, app name, and reason for the refund request.`,
         "We process approved refunds within 5–7 business days. Refunds are issued through Shopify's billing system.",
       ],
     },
@@ -179,7 +189,11 @@ export const refundPolicy = {
     {
       title: "Contact",
       content: [
-        "For refund questions, contact support@omnitech.dev. We aim to respond within 24 hours on business days.",
+        `Omnitech, Inc. · ${siteConfig.company.headquarters.street}`,
+        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}`,
+        `Phone: ${siteConfig.company.phone.display}`,
+        `Email: ${siteConfig.email.support}`,
+        "We aim to respond within 24 hours on business days (Mon–Fri, CT).",
       ],
     },
   ],

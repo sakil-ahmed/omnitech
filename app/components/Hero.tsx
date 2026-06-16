@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeIn } from "./motion";
-
-const trustItems = ["7-day free trial", "Billed via Shopify", "GDPR ready"];
+import { company, trustItems } from "@/app/data/site-content";
 
 export function Hero() {
   return (
@@ -34,8 +33,8 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            <span className="font-medium text-accent">Shopify App Partner</span>
-            <span className="text-muted">· App Store ready</span>
+            <span className="font-medium text-accent">{company.partnerLabel}</span>
+            <span className="text-muted">· Est. {company.founded}</span>
           </div>
         </FadeIn>
 
@@ -50,8 +49,8 @@ export function Hero() {
 
         <FadeIn delay={0.28}>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted md:text-xl">
-            Omnitech designs, builds, and publishes apps on the Shopify App Store — helping
-            merchants automate workflows and grow their stores.
+            {company.shortName} designs, builds, and publishes Shopify apps on the App Store—backed
+            by a software engineering team serving businesses since {company.founded}.
           </p>
         </FadeIn>
 

@@ -1,20 +1,9 @@
 "use client";
 
-const items = [
-  "Shopify App Store",
-  "Polaris UI",
-  "GraphQL API",
-  "Remix",
-  "Webhooks",
-  "Billing API",
-  "App Extensions",
-  "OAuth 2.0",
-  "Shopify CLI",
-  "Liquid",
-];
+import { marqueeItems } from "@/app/data/site-content";
 
 export function Marquee() {
-  const doubled = [...items, ...items];
+  const doubled = [...marqueeItems, ...marqueeItems];
 
   return (
     <div className="overflow-hidden border-y border-border/60 bg-surface/50 py-4 backdrop-blur-sm">

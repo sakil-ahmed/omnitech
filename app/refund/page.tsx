@@ -4,12 +4,13 @@ import { PageShell } from "@/app/components/PageShell";
 import { PageHero } from "@/app/components/PageHero";
 import { LegalPageContent } from "@/app/components/LegalPageContent";
 import { refundPolicy } from "@/app/data/legal";
+import { emails } from "@/app/data/site-content";
 import { createPageMetadata } from "@/app/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Refund Policy",
   description:
-    "Omnitech refund policy for Shopify app subscriptions — 7-day free trial, 14-day refund window, and how to request a refund.",
+    "Omnitech Inc. refund policy for Shopify app subscriptions — 7-day free trial, 14-day refund window, and how to request a refund.",
   path: "/refund",
 });
 
@@ -19,7 +20,7 @@ export default function RefundPage() {
       <PageHero
         label="Legal"
         title="Refund Policy"
-        description="Our refund policy for Omnitech Shopify app subscriptions."
+        description="Our refund policy for Omnitech Inc. Shopify app subscriptions."
       />
       <LegalPageContent
         lastUpdated={refundPolicy.lastUpdated}
@@ -34,8 +35,8 @@ export default function RefundPage() {
               Contact support
             </Link>{" "}
             or email{" "}
-            <a href="mailto:support@omnitech.dev" className="font-medium text-accent hover:underline">
-              support@omnitech.dev
+            <a href={`mailto:${emails.support}`} className="font-medium text-accent hover:underline">
+              {emails.support}
             </a>
             .
           </p>
