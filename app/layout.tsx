@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
+import { CookieBanner } from "@/app/components/CookieBanner";
 import { rootMetadata } from "@/app/lib/metadata";
 import "./globals.css";
 
@@ -33,7 +34,10 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-background text-foreground"
         suppressHydrationWarning
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <CookieBanner />
+        </ThemeProvider>
       </body>
     </html>
   );

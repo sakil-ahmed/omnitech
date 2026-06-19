@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Logo } from "@/app/components/Logo";
+import { openCookieSettings } from "@/app/components/CookieBanner";
 import {
   company,
   emails,
@@ -123,6 +124,13 @@ export function Footer() {
             <Link href="/refund" className="hover:text-foreground">
               Refund
             </Link>
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="hover:text-foreground"
+            >
+              Cookies
+            </button>
           </div>
         </div>
       </div>

@@ -54,6 +54,14 @@ export const privacyPolicy = {
       ],
     },
     {
+      title: "Cookies",
+      content: [
+        "Our marketing website uses essential cookies to keep the site working (for example, remembering your cookie consent choice).",
+        "Optional cookie categories include analytics (usage statistics), preferences (such as theme settings), and marketing (campaign measurement).",
+        "You can accept all cookies, allow only essential cookies, or customize each category from the cookie banner. Change your choices anytime using the Cookies link in the site footer.",
+      ],
+    },
+    {
       title: "Contact us",
       content: [
         `Omnitech, Inc. · ${siteConfig.company.headquarters.street}`,
