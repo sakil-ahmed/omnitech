@@ -73,7 +73,7 @@ export default function OpenGraphImage() {
                 textTransform: "uppercase",
               }}
             >
-              Shopify Apps
+              Shopify Apps & Themes
             </div>
           </div>
         </div>

@@ -148,10 +148,11 @@ export function ContactContent() {
 
             <FadeIn delay={0.3}>
               <div className="mt-6 rounded-2xl border border-border bg-gradient-to-br from-shopify-dark to-accent p-6 text-white">
-                <p className="font-semibold">Need custom Shopify app development?</p>
+                <p className="font-semibold">Need custom Shopify apps or themes?</p>
                 <p className="mt-2 text-sm text-emerald-100">
-                  {company.name} also delivers custom software, data, and AI consulting. Describe
-                  your Shopify project in the contact form or call {company.phone.display}.
+                  {company.name} builds public apps, private apps, and custom Online Store 2.0
+                  themes—and delivers custom software, data, and AI consulting. Describe your
+                  project in the contact form or call {company.phone.display}.
                 </p>
                 <a
                   href={company.mainWebsite}

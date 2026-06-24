@@ -7,13 +7,16 @@ import { createPageMetadata } from "@/app/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Our Apps",
   description:
-    "Browse all Omnitech Shopify apps — order notifications, bulk product editing, smart reviews, and stock alerts for your store.",
+    "Browse all Omnitech Shopify apps — order notifications, bulk product editing, smart reviews, volume discounts, and stock alerts for your store.",
   path: "/apps",
   keywords: [
     "Shopify order notifications",
     "bulk product editor Shopify",
     "Shopify reviews app",
     "inventory alert Shopify",
+    "volume discount Shopify",
+    "quantity breaks Shopify",
+    "TierBloom",
   ],
 });
 

@@ -41,7 +41,7 @@ export function Hero() {
         <FadeIn delay={0.15}>
           <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
             We build{" "}
-            <span className="text-gradient-animate">Shopify apps</span>
+            <span className="text-gradient-animate">Shopify apps & themes</span>
             <br />
             merchants love
           </h1>
@@ -49,8 +49,9 @@ export function Hero() {
 
         <FadeIn delay={0.28}>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted md:text-xl">
-            {company.shortName} designs, builds, and publishes Shopify apps on the App Store—backed
-            by a software engineering team serving businesses since {company.founded}.
+            {company.shortName} designs, builds, and publishes Shopify apps on the App Store—and
+            crafts custom Online Store 2.0 themes—backed by a software engineering team serving
+            businesses since {company.founded}.
           </p>
         </FadeIn>
 

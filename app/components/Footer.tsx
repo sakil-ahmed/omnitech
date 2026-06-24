@@ -30,6 +30,8 @@ export function Footer() {
               📍 {hq.street}
               <br />
               {hq.city}, {hq.state} {hq.zip}
+              <br />
+              {hq.country}
             </p>
             <a
               href={`tel:${company.phone.tel}`}

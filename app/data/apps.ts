@@ -12,6 +12,15 @@ export type AppFeature = {
   icon: string;
 };
 
+export type AppThemeExtension = {
+  name: string;
+  blockName: string;
+  description: string;
+  setupSteps: { title: string; description: string }[];
+  settings: string[];
+  techNotes: string[];
+};
+
 export type App = {
   slug: string;
   id: string;
@@ -33,6 +42,7 @@ export type App = {
   plans: AppPlan[];
   faqs: { question: string; answer: string }[];
   shopifyUrl: string;
+  themeExtension?: AppThemeExtension;
 };
 
 export const apps: App[] = [
@@ -237,6 +247,129 @@ export const apps: App[] = [
       { question: "Can I set different thresholds per product?", answer: "Absolutely. Set global defaults or override per product and variant." },
     ],
     shopifyUrl: "https://apps.shopify.com/",
+  },
+  {
+    slug: "tierbloom",
+    id: "tierbloom",
+    num: "05",
+    title: "TierBloom",
+    tagline: "Volume bundles & tier discounts for Shopify",
+    description:
+      "Increase average order value with quantity breaks—Buy 2 save 10%, Buy 3 save 15%—synced at checkout and on your product page.",
+    longDescription:
+      "TierBloom helps merchants grow basket size with tiered volume pricing. Create quantity break offers in the embedded admin, apply discounts natively at checkout via Shopify Functions, and display a beautiful tier selector on product pages with our theme app extension—no custom theme code required.",
+    color: "from-rose-500 to-pink-600",
+    glow: "group-hover:shadow-rose-500/20",
+    status: "Coming soon",
+    iconPath:
+      "M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75",
+    rating: 0,
+    reviewCount: "0",
+    installs: "—",
+    features: [
+      {
+        title: "Quantity tier rules",
+        description: "Set percentage, fixed amount, or fixed price per tier—Buy 2 save 10%, Buy 3 save 15%, and more.",
+        icon: "M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75",
+      },
+      {
+        title: "Shopify Function checkout",
+        description: "Discounts apply natively at cart and checkout via cart.lines.discounts.generate.run—no coupon codes.",
+        icon: "M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+      },
+      {
+        title: "Theme app extension",
+        description: "Add the TierBloom volume tiers block to any product page from the theme editor—works with Online Store 2.0.",
+        icon: "M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25",
+      },
+      {
+        title: "One-click tier selection",
+        description: "Customers tap a tier on the product page—the widget sets quantity automatically before add to cart.",
+        icon: "M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122",
+      },
+      {
+        title: "Product metafield sync",
+        description: "Offer tiers sync to product.metafields.tierbloom.tiers so the storefront widget stays in sync with admin.",
+        icon: "M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99",
+      },
+      {
+        title: "Offer dashboard",
+        description: "Create, activate, and manage volume offers from a Polaris-native embedded admin—built on Shopify's official app template.",
+        icon: "M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z",
+      },
+    ],
+    highlights: [
+      "Shopify Functions + theme extension",
+      "No theme code edits",
+      "OS 2.0 product block",
+      "Coming Q3 2026",
+    ],
+    steps: [
+      { title: "Install TierBloom", description: "Add the app from the Shopify App Store and connect your dev or live store." },
+      { title: "Create a volume offer", description: "Pick products, set quantity tiers, and activate—the discount syncs to checkout automatically." },
+      { title: "Add the theme block", description: "In Online Store → Customize, add TierBloom volume tiers to your product template." },
+    ],
+    plans: [
+      {
+        name: "Starter",
+        price: 9.99,
+        description: "Up to 5 active offers",
+        features: ["Quantity tier discounts", "Theme app extension block", "Product-scoped offers", "7-day free trial"],
+        popular: false,
+      },
+      {
+        name: "Growth",
+        price: 19.99,
+        description: "Up to 25 active offers",
+        features: ["Everything in Starter", "Collection-scoped offers", "Custom tier labels", "Priority support"],
+        popular: true,
+      },
+      {
+        name: "Pro",
+        price: 39.99,
+        description: "Unlimited offers",
+        features: ["Everything in Growth", "Multi-store support", "Analytics dashboard", "Dedicated onboarding"],
+        popular: false,
+      },
+    ],
+    faqs: [
+      {
+        question: "Do I need to edit my theme code?",
+        answer: "No. TierBloom ships a theme app extension. Add the TierBloom volume tiers block from the theme editor—no Liquid files to copy or maintain.",
+      },
+      {
+        question: "How do discounts apply at checkout?",
+        answer: "TierBloom uses a Shopify Function (cart.lines.discounts.generate.run) so tier discounts apply natively in cart and checkout—customers don't need coupon codes.",
+      },
+      {
+        question: "Which themes are supported?",
+        answer: "Any Online Store 2.0 theme that supports app blocks on product templates. Dawn, Refresh, and most modern themes work out of the box.",
+      },
+      {
+        question: "When will TierBloom launch?",
+        answer: "We're targeting Q3 2026. Join the waitlist for early access and a launch discount.",
+      },
+    ],
+    shopifyUrl: "https://apps.shopify.com/",
+    themeExtension: {
+      name: "TierBloom Widget",
+      blockName: "TierBloom volume tiers",
+      description:
+        "A theme app extension that renders quantity break tiers on product pages. Tiers sync from the TierBloom admin via product metafields—merchants customize heading and accent color in the theme editor.",
+      setupSteps: [
+        { title: "Open the theme editor", description: "Go to Online Store → Themes → Customize." },
+        { title: "Select a product template", description: "Navigate to any product page in the preview." },
+        { title: "Add the app block", description: "Click Add block → Apps → TierBloom volume tiers. Drag it below the buy button." },
+        { title: "Customize & save", description: "Set the heading (e.g. Buy more, save more) and accent color, then save." },
+      ],
+      settings: ["Heading text", "Accent color"],
+      techNotes: [
+        "Extension type: theme app extension (tierbloom-widget)",
+        "Block target: product templates (Online Store 2.0)",
+        "Data source: product.metafields.tierbloom.tiers (JSON)",
+        "Assets: tierbloom.css + tierbloom.js (tier click sets quantity)",
+      ],
+    },
   },
 ];
 

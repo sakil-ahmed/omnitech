@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
 import { apps } from "@/app/data/apps";
+import { themes } from "@/app/data/themes";
 import { siteConfig } from "@/app/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/apps",
+    "/themes",
     "/about",
     "/contact",
     "/pricing",
@@ -28,5 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticEntries, ...appEntries];
+  const themeEntries: MetadataRoute.Sitemap = themes.map((theme) => ({
+    url: `${siteConfig.url}/themes/${theme.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
+  return [...staticEntries, ...appEntries, ...themeEntries];
 }

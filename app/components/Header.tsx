@@ -8,6 +8,7 @@ import { Logo } from "@/app/components/Logo";
 
 const navLinks = [
   { label: "Apps", href: "/apps" },
+  { label: "Themes", href: "/themes" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

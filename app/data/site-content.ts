@@ -9,19 +9,19 @@ export const company = {
   companyTagline: siteConfig.companyTagline,
   description: siteConfig.description,
   shortDescription:
-    "Omnitech Inc. delivers software, data, and AI consulting—and publishes Shopify apps that help merchants run better stores.",
+    "Omnitech Inc. delivers software, data, and AI consulting—and builds Shopify apps and custom themes that help merchants run better stores.",
   location: co.location,
   founded: co.founded,
   partnerLabel: co.partners.join(" · "),
   businessHours: co.businessHours,
-  responseTime: "Within 24 hours on business days (Mon–Fri, CT)",
+  responseTime: "Within 24 hours on business days (Sun–Thu, BST)",
   mission:
-    "Deliver tailored technology solutions—and build Shopify apps that merchants actually love to use.",
-  aboutTitle: "Software engineering since 1998",
+    "Deliver tailored technology solutions—and build Shopify apps and themes that merchants actually love to use.",
+  aboutTitle: `Building since ${co.founded}`,
   aboutParagraphs: [
-    "Since 1998, Omnitech Inc. has delivered custom software, data, and AI solutions from Sioux Falls, South Dakota—serving businesses across the United States. As a Microsoft Partner, our culture centers on an eagerness to learn, humility, and a passion for solving complex problems.",
-    "We cover the full software development lifecycle—business analysis, design, development, quality assurance, and maintenance. Our Shopify app studio extends that expertise to merchants worldwide: we design, build, and publish focused apps on the Shopify App Store.",
-    "From order notifications to bulk editing and review collection, each app solves one workflow exceptionally well—simple, reliable, and built with merchants in mind.",
+    `Founded in ${co.founded}, Omnitech Inc. builds Shopify apps, custom themes, and software solutions from Tangail, Dhaka, Bangladesh—serving merchants and businesses worldwide. As a Microsoft Partner and Shopify App Partner, our culture centers on an eagerness to learn, humility, and a passion for solving complex problems.`,
+    "We cover the full software development lifecycle—business analysis, design, development, quality assurance, and maintenance. Our Shopify studio extends that expertise to merchants worldwide: we design, build, and publish focused apps on the App Store—and craft custom Online Store 2.0 themes for brands that need a storefront built to convert.",
+    "From order notifications to bulk editing, review collection, and volume discounts—each app solves one workflow exceptionally well—simple, reliable, and built with merchants in mind.",
   ],
   headquarters: co.headquarters,
   offices: co.offices,
@@ -34,7 +34,7 @@ export const emails = siteConfig.email;
 
 export const companyStats = [
   { value: co.founded, label: "Founded" },
-  { value: "4", label: "Shopify apps", suffix: "+" },
+  { value: "5", label: "Shopify apps", suffix: "+" },
   { value: "1.2K+", label: "Store installs" },
   { value: "4.9★", label: "Average app rating" },
   { value: "99.9%", label: "App uptime" },
@@ -120,13 +120,19 @@ export const platformFeatures = [
   {
     title: "Built on Shopify APIs",
     description:
-      "GraphQL Admin API, webhooks, Billing API, and app extensions—we use the full Shopify platform.",
+      "GraphQL Admin API, webhooks, Billing API, theme app extensions, and Liquid—we use the full Shopify platform.",
     icon: "M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5",
+  },
+  {
+    title: "Custom theme development",
+    description:
+      "We build Online Store 2.0 themes from scratch—performance-tuned, brand-aligned, and ready for app blocks.",
+    icon: "M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z",
   },
   {
     title: "Engineering you can trust",
     description:
-      "Backed by Omnitech Inc.—a software and data engineering firm serving businesses since 1998.",
+      "Backed by Omnitech Inc.—a software and Shopify engineering team based in Bangladesh since 2026.",
     icon: "M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155",
   },
   {
@@ -159,6 +165,11 @@ export const faqs = [
       `Yes. Omnitech Inc. builds public apps for the App Store and private apps for agencies and brands. Contact us at ${emails.hello} or call ${company.phone.display} with your requirements.`,
   },
   {
+    question: "Do you build custom Shopify themes?",
+    answer:
+      `Yes. We design and develop Online Store 2.0 themes—custom sections, performance optimization, and app block support. Contact us at ${emails.hello} or call ${company.phone.display} to discuss your storefront.`,
+  },
+  {
     question: "What happens when I uninstall an app?",
     answer:
       "Your subscription stops immediately. Per Shopify policy, we delete store data within 48 hours of uninstall unless you request an export. You can reinstall anytime.",
@@ -166,12 +177,12 @@ export const faqs = [
   {
     question: "How can I get support?",
     answer:
-      `Email ${emails.support} or call ${company.phone.display}. We respond within 24 hours on business days (Mon–Fri, CT). Pro plan customers get priority support.`,
+      `Email ${emails.support} or call ${company.phone.display}. We respond within 24 hours on business days (Sun–Thu, BST). Pro plan customers get priority support.`,
   },
   {
     question: "Where is Omnitech based?",
     answer:
-      `Omnitech Inc. is headquartered at ${company.headquarters.street}, ${company.headquarters.city}, ${company.headquarters.state} ${company.headquarters.zip}. We serve merchants worldwide through the Shopify App Store.`,
+      `Omnitech Inc. is headquartered at ${company.headquarters.street}, ${company.headquarters.city}, ${company.headquarters.state} ${company.headquarters.zip}, ${company.headquarters.country}. We serve merchants worldwide through the Shopify App Store.`,
   },
 ];
 
@@ -208,6 +219,8 @@ export const blogPosts = [
 export const marqueeItems = [
   "Microsoft Partner",
   "Shopify App Store",
+  "Shopify Themes",
+  "Online Store 2.0",
   "Polaris UI",
   "GraphQL Admin API",
   "Custom Software",
@@ -217,7 +230,7 @@ export const marqueeItems = [
   "GDPR Compliant",
 ];
 
-const hqLine = `${company.headquarters.street}, ${company.headquarters.city}, ${company.headquarters.state} ${company.headquarters.zip}`;
+const hqLine = `${company.headquarters.street}, ${company.headquarters.city}, ${company.headquarters.state} ${company.headquarters.zip}, ${company.headquarters.country}`;
 
 export const contactMethods = [
   {
@@ -239,10 +252,10 @@ export const contactMethods = [
     description: company.businessHours,
   },
   {
-    title: "Rapid City office",
-    value: `${company.offices[1].street}, ${company.offices[1].city}, ${company.offices[1].state} ${company.offices[1].zip}`,
+    title: company.offices[1].label,
+    value: `${company.offices[1].street}, ${company.offices[1].city}, ${company.offices[1].state} ${company.offices[1].zip}, ${company.headquarters.country}`,
     href: null,
-    description: "Secondary office · South Dakota",
+    description: `Secondary office · ${company.offices[1].city}`,
   },
 ];
 
@@ -251,6 +264,7 @@ export const contactSubjects = [
   "Billing question",
   "Refund request",
   "Custom app development",
+  "Custom theme development",
   "Custom software / consulting",
   "Partnership",
   "Stock Alert waitlist",
@@ -260,6 +274,7 @@ export const contactSubjects = [
 export const footerCompanyLinks = [
   { label: "About", href: "/about" },
   { label: "Our Apps", href: "/apps" },
+  { label: "Our Themes", href: "/themes" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];

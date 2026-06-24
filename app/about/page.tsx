@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/app/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "About Us",
   description:
-    "Learn about Omnitech Inc. — a software, data, and AI consulting firm since 1998, and the team behind our Shopify App Store apps.",
+    "Learn about Omnitech Inc. — a Shopify apps and themes studio founded in 2026, based in Tangail, Dhaka, Bangladesh.",
   path: "/about",
 });
 
@@ -16,8 +16,8 @@ export default function AboutPage() {
     <PageShell>
       <PageHero
         label="About"
-        title="Software engineering since 1998"
-        description="Omnitech Inc. builds custom software—and publishes Shopify apps merchants rely on."
+        title="Building since 2026"
+        description="Omnitech Inc. builds custom software—and publishes Shopify apps and themes merchants rely on."
       />
       <AboutContent />
     </PageShell>

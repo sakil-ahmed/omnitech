@@ -22,7 +22,8 @@ export function AboutContent() {
               ))}
               <p className="mt-4 text-sm text-muted">
                 📍 {company.headquarters.street}, {company.headquarters.city},{" "}
-                {company.headquarters.state} {company.headquarters.zip}
+                {company.headquarters.state} {company.headquarters.zip},{" "}
+                {company.headquarters.country}
               </p>
               <a
                 href={`tel:${company.phone.tel}`}
@@ -96,7 +97,7 @@ export function AboutContent() {
           <FadeIn className="text-center">
             <h2 className="font-display text-3xl font-bold">Our offices</h2>
             <p className="mx-auto mt-3 max-w-lg text-muted">
-              Headquartered in South Dakota with a national client base.
+              Headquartered in Bangladesh with a global merchant base.
             </p>
           </FadeIn>
           <Stagger className="mt-10 grid gap-6 md:grid-cols-2">
@@ -106,7 +107,7 @@ export function AboutContent() {
                   <p className="text-sm font-semibold text-accent">{office.label}</p>
                   <p className="font-display mt-2 text-lg font-semibold">{office.street}</p>
                   <p className="mt-1 text-muted">
-                    {office.city}, {office.state} {office.zip}
+                    {office.city}, {office.state} {office.zip}, {company.headquarters.country}
                   </p>
                 </div>
               </StaggerItem>
@@ -120,8 +121,8 @@ export function AboutContent() {
           <FadeIn>
             <h2 className="font-display text-3xl font-bold">Want to work with us?</h2>
             <p className="mx-auto mt-4 max-w-lg text-muted">
-              Whether you need a custom Shopify app, want to partner with us, or have
-              feedback on our products—we&apos;d love to hear from you.
+              Whether you need a custom Shopify app, a bespoke theme, want to partner with us, or
+              have feedback on our products—we&apos;d love to hear from you.
             </p>
             <Link
               href="/contact"

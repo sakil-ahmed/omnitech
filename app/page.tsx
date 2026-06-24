@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
 import { Products } from "./components/Products";
+import { Themes } from "./components/Themes";
 import { Process } from "./components/Process";
 import { Stats } from "./components/Stats";
 import { Features } from "./components/Features";
@@ -14,14 +15,17 @@ import { Footer } from "./components/Footer";
 import { createPageMetadata } from "@/app/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Shopify Apps Built for Merchants",
+  title: "Shopify Apps & Themes Built for Merchants",
   description:
-    "Omnitech builds and publishes Shopify apps on the App Store — order alerts, bulk editing, reviews, and inventory tools for growing stores.",
+    "Omnitech builds and publishes Shopify apps on the App Store—and crafts custom Online Store 2.0 themes for growing ecommerce brands.",
   path: "/",
   keywords: [
     "Shopify apps",
+    "Shopify themes",
+    "Shopify theme development",
     "Shopify App Store",
     "Shopify app studio",
+    "Online Store 2.0",
     "ecommerce automation",
     "merchant tools",
   ],
@@ -35,6 +39,7 @@ export default function Home() {
         <Hero />
         <Marquee />
         <Products />
+        <Themes />
         <Process />
         <Stats />
         <Features />

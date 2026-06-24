@@ -65,7 +65,7 @@ export const privacyPolicy = {
       title: "Contact us",
       content: [
         `Omnitech, Inc. · ${siteConfig.company.headquarters.street}`,
-        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}`,
+        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}, ${siteConfig.company.headquarters.country}`,
         `Phone: ${siteConfig.company.phone.display}`,
         `Email: ${siteConfig.email.support} (support) · ${siteConfig.email.hello} (general)`,
         `Business hours: ${siteConfig.company.businessHours}`,
@@ -135,15 +135,15 @@ export const termsOfService = {
     {
       title: "Governing law",
       content: [
-        "These Terms are governed by the laws of the State of South Dakota, United States, without regard to conflict of law principles.",
-        "Any disputes shall be resolved in the courts of Minnehaha County, South Dakota.",
+        "These Terms are governed by the laws of Bangladesh, without regard to conflict of law principles.",
+        "Any disputes shall be resolved in the courts of Dhaka, Bangladesh.",
       ],
     },
     {
       title: "Contact",
       content: [
         `Omnitech, Inc. · ${siteConfig.company.headquarters.street}`,
-        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}`,
+        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}, ${siteConfig.company.headquarters.country}`,
         `Phone: ${siteConfig.company.phone.display}`,
         `Email: ${siteConfig.email.support} (support) · ${siteConfig.email.hello} (general)`,
         `Business hours: ${siteConfig.company.businessHours}`,
@@ -198,10 +198,10 @@ export const refundPolicy = {
       title: "Contact",
       content: [
         `Omnitech, Inc. · ${siteConfig.company.headquarters.street}`,
-        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}`,
+        `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}, ${siteConfig.company.headquarters.country}`,
         `Phone: ${siteConfig.company.phone.display}`,
         `Email: ${siteConfig.email.support}`,
-        "We aim to respond within 24 hours on business days (Mon–Fri, CT).",
+        "We aim to respond within 24 hours on business days (Sun–Thu, BST).",
       ],
     },
   ],

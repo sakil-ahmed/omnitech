@@ -109,7 +109,7 @@ export function AppDetail({ app }: AppDetailProps) {
                     </motion.a>
                   ) : (
                     <motion.a
-                      href={`mailto:${emails.hello}?subject=Stock Alert Waitlist`}
+                      href={`mailto:${emails.hello}?subject=${encodeURIComponent(`${app.title} Waitlist`)}`}
                       whileHover={{ scale: 1.04, y: -2 }}
                       whileTap={{ scale: 0.97 }}
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-violet-500 to-purple-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl"
@@ -218,6 +218,106 @@ export function AppDetail({ app }: AppDetailProps) {
           </Stagger>
         </div>
       </section>
+
+      {/* Theme app extension */}
+      {app.themeExtension && (
+        <section className="border-t border-border bg-surface py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <FadeIn className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-widest text-accent">Theme extension</p>
+              <h2 className="font-display mt-2 text-3xl font-bold md:text-4xl">
+                {app.themeExtension.name}
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-muted">
+                {app.themeExtension.description}
+              </p>
+            </FadeIn>
+
+            <div className="mt-12 grid gap-8 lg:grid-cols-2">
+              <FadeIn delay={0.1}>
+                <div className="rounded-2xl border border-border/80 bg-background p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-accent">App block</p>
+                  <h3 className="font-display mt-2 text-xl font-semibold">{app.themeExtension.blockName}</h3>
+                  <p className="mt-4 text-sm text-muted">
+                    Add this block from the theme editor on any product template. No Liquid files to copy—
+                    the extension ships with CSS and JavaScript assets bundled by Shopify.
+                  </p>
+
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-muted">Customizer settings</p>
+                  <ul className="mt-3 space-y-2">
+                    {app.themeExtension.settings.map((setting) => (
+                      <li key={setting} className="flex items-center gap-2 text-sm">
+                        <svg className="h-4 w-4 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        {setting}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-muted">Technical notes</p>
+                  <ul className="mt-3 space-y-1.5">
+                    {app.themeExtension.techNotes.map((note) => (
+                      <li key={note} className="text-xs text-muted">{note}</li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.2}>
+                <div className="rounded-2xl border border-border/80 bg-background p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-accent">Theme setup</p>
+                  <ol className="mt-4 space-y-4">
+                    {app.themeExtension.setupSteps.map((step, i) => (
+                      <li key={step.title} className="flex gap-4">
+                        <span className={`font-display flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${app.color} text-sm font-bold text-white`}>
+                          {i + 1}
+                        </span>
+                        <div>
+                          <p className="font-semibold">{step.title}</p>
+                          <p className="mt-1 text-sm text-muted">{step.description}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+
+                  {/* Storefront preview mockup */}
+                  <div className="mt-8 overflow-hidden rounded-xl border border-border/60">
+                    <div className="border-b border-border/60 bg-surface px-4 py-2 text-xs text-muted">
+                      Product page preview
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm font-semibold">Sample product</p>
+                      <p className="mt-1 text-lg font-bold">$24.00</p>
+                      <div
+                        className="mt-4 rounded-xl border p-4"
+                        style={{ borderColor: "color-mix(in srgb, #008060 25%, #e3e3e3)", background: "color-mix(in srgb, #008060 6%, #fff)" }}
+                      >
+                        <p className="text-xs font-semibold">Buy more, save more</p>
+                        <div className="mt-2 space-y-2">
+                          {[
+                            { qty: "2+", label: "Save 10%" },
+                            { qty: "3+", label: "Save 15%" },
+                            { qty: "5+", label: "Save 20%" },
+                          ].map((tier, i) => (
+                            <div
+                              key={tier.qty}
+                              className={`flex items-center justify-between rounded-lg border px-3 py-2 text-xs ${i === 0 ? "border-emerald-500 bg-white shadow-sm" : "border-gray-200 bg-white"}`}
+                            >
+                              <span className="font-semibold">{tier.qty}</span>
+                              <span className="text-muted">{tier.label}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Pricing */}
       <section id="pricing" className="border-t border-border bg-surface py-20">

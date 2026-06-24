@@ -15,12 +15,12 @@ export function Features() {
             Why {company.name}
           </p>
           <h2 className="font-display mt-2 text-3xl font-bold tracking-tight md:text-4xl">
-            Shopify apps done right
+            Shopify apps & themes done right
           </h2>
           <p className="mt-4 text-lg text-muted">
             We&apos;re a {company.companyTagline.toLowerCase()} firm headquartered in{" "}
-            {company.location}. Our Shopify apps are built with the same engineering rigor we bring
-            to custom software, data, and AI projects.
+            {company.location}. Our Shopify apps and custom themes are built with the same
+            engineering rigor we bring to custom software, data, and AI projects.
           </p>
         </FadeIn>
 
