@@ -40,11 +40,11 @@ export function Products() {
         <Stagger className={`mt-12 grid gap-5 ${getAppsGridClass()}`}>
           {apps.map((app) => (
             <StaggerItem key={app.slug}>
-              <Link href={`/apps/${app.slug}`}>
+              <Link href={`/apps/${app.slug}`} className="block h-full">
                 <motion.article
                   whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className={`card-shine group relative overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-surface to-background p-6 shadow-sm transition-shadow hover:border-accent/40 hover:shadow-xl ${app.glow} md:p-8`}
+                  className={`card-shine card-equal group relative overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-surface to-background p-6 shadow-sm transition-shadow hover:border-accent/40 hover:shadow-xl ${app.glow} md:p-8`}
                 >
                   <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/5 transition-transform duration-500 group-hover:scale-150" />
 
@@ -64,10 +64,10 @@ export function Products() {
                   <h3 className="font-display relative mt-6 text-xl font-semibold transition-colors group-hover:text-accent">
                     {app.title}
                   </h3>
-                  <p className="relative mt-2 leading-relaxed text-muted">
+                  <p className="card-equal-body relative mt-2 leading-relaxed text-muted">
                     {app.description}
                   </p>
-                  <p className="relative mt-6 text-sm font-semibold text-accent">
+                  <p className="card-equal-footer relative mt-6 text-sm font-semibold text-accent">
                     Learn more →
                   </p>
                 </motion.article>

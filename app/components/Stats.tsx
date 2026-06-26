@@ -45,7 +45,7 @@ export function Stats() {
                 animate={isInView ? { scale: 1, opacity: 1 } : {}}
                 transition={{ delay: i * 0.1, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-sm"
+                className="flex h-full flex-col justify-center rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-sm"
               >
                 <p className="font-display text-3xl font-bold md:text-4xl">
                   {stat.value}

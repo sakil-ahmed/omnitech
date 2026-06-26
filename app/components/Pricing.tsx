@@ -108,7 +108,7 @@ export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
                   whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
-                  className={`relative flex flex-col rounded-2xl border p-8 ${
+                  className={`card-equal relative flex flex-col rounded-2xl border p-8 ${
                     plan.popular
                       ? "border-accent/50 bg-surface shadow-2xl shadow-accent/15 ring-1 ring-accent/20"
                       : "border-border/80 bg-surface/90 shadow-sm"
@@ -141,7 +141,7 @@ export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
                   </ul>
                   <Link
                     href={currentApp ? `/apps/${currentApp.slug}#pricing` : "/apps"}
-                    className={`mt-8 block rounded-full py-3 text-center text-sm font-semibold transition-colors ${
+                    className={`card-equal-footer mt-8 block rounded-full py-3 text-center text-sm font-semibold transition-colors ${
                       plan.popular
                         ? "bg-gradient-to-r from-accent to-accent-light text-white shadow-lg shadow-accent/25"
                         : "border border-border bg-background text-foreground hover:border-accent/40 hover:text-accent"

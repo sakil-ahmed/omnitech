@@ -40,10 +40,10 @@ export function Hero() {
 
         <FadeIn delay={0.15}>
           <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-            We build{" "}
+            Grow your store with{" "}
             <span className="text-gradient-animate">Shopify apps</span>
             <br />
-            merchants love
+            that deliver results
           </h1>
         </FadeIn>
 

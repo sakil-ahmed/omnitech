@@ -5,17 +5,20 @@ import { FadeIn } from "@/app/components/motion";
 type LegalSection = {
   title: string;
   content: string[];
+  bullets?: string[];
 };
 
 type LegalPageContentProps = {
   lastUpdated: string;
   intro: string;
+  scope?: string;
   sections: LegalSection[];
 };
 
 export function LegalPageContent({
   lastUpdated,
   intro,
+  scope,
   sections,
 }: LegalPageContentProps) {
   return (
@@ -24,6 +27,9 @@ export function LegalPageContent({
         <FadeIn>
           <p className="text-sm text-muted">Last updated: {lastUpdated}</p>
           <p className="mt-6 text-lg leading-relaxed text-muted">{intro}</p>
+          {scope && (
+            <p className="mt-4 text-sm leading-relaxed text-muted">{scope}</p>
+          )}
         </FadeIn>
 
         <div className="mt-12 space-y-10">
@@ -36,12 +42,19 @@ export function LegalPageContent({
                 <div className="mt-4 space-y-3">
                   {section.content.map((paragraph) => (
                     <p
-                      key={paragraph.slice(0, 40)}
+                      key={paragraph.slice(0, 48)}
                       className="text-sm leading-relaxed text-muted"
                     >
                       {paragraph}
                     </p>
                   ))}
+                  {section.bullets && section.bullets.length > 0 && (
+                    <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted">
+                      {section.bullets.map((item) => (
+                        <li key={item.slice(0, 48)}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             </FadeIn>

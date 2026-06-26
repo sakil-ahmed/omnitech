@@ -25,7 +25,7 @@ export function Process() {
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                className="group relative"
+                className="group relative h-full"
               >
                 {index < processSteps.length - 1 && (
                   <div className="absolute top-10 left-[calc(100%-8px)] z-0 hidden h-px w-[calc(100%-16px)] lg:block">
@@ -38,7 +38,7 @@ export function Process() {
                     />
                   </div>
                 )}
-                <div className="relative rounded-2xl border border-border/80 bg-surface/80 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:border-accent/30 group-hover:shadow-lg group-hover:shadow-accent/10">
+                <div className="card-equal relative rounded-2xl border border-border/80 bg-surface/80 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:border-accent/30 group-hover:shadow-lg group-hover:shadow-accent/10">
                   <div className="flex items-center justify-between">
                     <span className="text-2xl">{item.icon}</span>
                     <span className="font-display text-3xl font-bold text-accent/20 transition-colors group-hover:text-accent/40">
@@ -48,7 +48,7 @@ export function Process() {
                   <h3 className="font-display mt-4 text-lg font-semibold group-hover:text-accent">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
+                  <p className="card-equal-body mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
                 </div>
               </motion.div>
             </StaggerItem>

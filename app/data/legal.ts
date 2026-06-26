@@ -1,41 +1,55 @@
 import { siteConfig } from "@/app/lib/site";
 
 export const privacyPolicy = {
-  lastUpdated: "June 15, 2026",
+  lastUpdated: "June 21, 2026",
   intro:
-    "Omnitech, Inc. (\"we\", \"our\", or \"us\") respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you use our website and Shopify applications.",
+    'This Privacy Policy explains how Omnitech, Inc. ("we," "us," or "our") collects, uses, discloses, and protects the personal information of users ("you" or "users") when you access and use our apps from the Shopify App Store or our website. We are committed to protecting your privacy and ensuring the security of your personal information. By using our website and our apps, you consent to the practices described in this Privacy Policy.',
+  scope:
+    `This policy applies to all Omnitech Shopify App Store apps (including CartLift), our website (${siteConfig.url.replace(/^https?:\/\//, "")}), and embedded app experiences within Shopify Admin. Specific apps may collect additional data only as needed for their features (for example, product and order data used by CartLift to power upsell recommendations, described below).`,
   sections: [
     {
       title: "Information we collect",
       content: [
-        "When you install our Shopify apps, we receive store information authorized through Shopify's OAuth process, including store name, email, and data required for the app to function (e.g. orders, products, customers as permitted by each app).",
-        "When you contact us via email or our contact form, we collect your name, email address, and message content.",
-        "We automatically collect basic usage data such as app interactions, error logs, and performance metrics to improve our services.",
+        "Personal information: When you install one of our apps from the Shopify App Store or when you register for an account or contact us through our website, we may collect personal information such as your name, email address, and Shopify store URL. We require this information to provide you with access to our services and to communicate with you regarding your account.",
+        "Store and app data: When you install our Shopify apps, we receive store information authorized through Shopify's OAuth process, including store name, email, and data required for each app to function (for example, products, orders, customers, and cart activity as permitted by the app's access scopes and your subscription plan).",
+        "Usage data: We may automatically collect certain information about your usage of our apps and website, such as your IP address, device information, browser type, and operating system. This information is used to analyze trends, administer the site, track user movements, and gather demographic information for aggregate use.",
       ],
     },
     {
       title: "How we use your information",
       content: [
-        "To provide, operate, and maintain our Shopify applications.",
-        "To process billing through Shopify's billing API.",
-        "To respond to support requests and communicate product updates.",
-        "To improve app performance, fix bugs, and develop new features.",
-        "To comply with legal obligations and Shopify App Store requirements.",
+        "Account management: We use your personal information to manage your account, provide access to our services, and communicate with you regarding your account status and updates.",
+        "Improve user experience: The usage data we gather is used to analyze user patterns and preferences, allowing us to optimize our apps and services and tailor features and content to better suit merchant needs.",
+        "Provide customer support: We may use your information to respond to your inquiries, provide technical support, and assist you with any issues you may encounter while using our apps or website.",
+        "Billing and subscriptions: We use store and billing data to process subscriptions through Shopify's billing API and to deliver the features included in your plan.",
+        "Marketing communications: With your explicit consent, we may send you marketing communications about our products, services, promotions, and relevant updates. You can opt out of these communications at any time.",
       ],
     },
     {
-      title: "Data sharing",
+      title: "Sharing your information",
       content: [
         "We do not sell your personal data or store data to third parties.",
-        "We may share data with service providers who help us operate our apps (e.g. hosting, email delivery), bound by confidentiality agreements.",
-        "We may disclose information if required by law or to protect our rights and users' safety.",
+        "Third-party service providers: We may share your personal information with trusted third-party service providers who assist us in delivering our services and improving in-app functionality (for example, cloud hosting, error monitoring, and email delivery). These providers are bound by confidentiality agreements and are not authorized to use your information for any other purpose.",
+        "Legal requirements: We may disclose your personal information if required by law or in response to valid legal requests, such as subpoenas or court orders.",
       ],
     },
     {
-      title: "Data retention",
+      title: "Data security",
       content: [
-        "We retain store data only as long as the app is installed or as needed to provide the service.",
-        "Upon app uninstall, we delete store data within 48 hours in accordance with Shopify's data protection requirements, unless you request an export.",
+        "Security measures: We implement reasonable and appropriate technical and organizational security measures to protect your personal information from unauthorized access, use, alteration, or disclosure. We use industry-standard encryption (TLS) for data in transit and encrypt sensitive data at rest where applicable.",
+        "Data retention: We retain personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. Store data is retained only while an app is installed or as needed to provide the service. Upon app uninstall, we delete store data within 48 hours in accordance with Shopify's data protection requirements, unless you request an export. We will securely delete or anonymize personal information once it is no longer needed.",
+      ],
+    },
+    {
+      title: "Cookies and tracking",
+      content: [
+        "We use cookies and similar tracking technologies on our marketing website to enhance your browsing experience, track website usage, and collect analytics data. By using our website, you consent to our use of these cookies in accordance with your preferences set in our cookie banner.",
+        "Our website may use cookies from the following third-party services (when you opt in to the relevant categories):",
+      ],
+      bullets: [
+        "Shopify (App Store installs and billing, when applicable)",
+        "Google Analytics (website usage and UX improvements, analytics cookies)",
+        "Essential site cookies (cookie consent, theme preferences, and core functionality)",
       ],
     },
     {
@@ -43,31 +57,28 @@ export const privacyPolicy = {
       content: [
         `You may request access to, correction of, or deletion of your personal data by contacting ${siteConfig.email.support}.`,
         "If you are in the EU/EEA, you have rights under GDPR including data portability and the right to lodge a complaint with a supervisory authority.",
-        "You can uninstall any Omnitech app at any time from your Shopify admin.",
+        "You can uninstall any Omnitech app at any time from your Shopify admin. You can also change cookie preferences anytime using the Cookies link in the site footer.",
       ],
     },
     {
-      title: "Security",
+      title: "Children's privacy",
       content: [
-        "We use industry-standard encryption (TLS) for data in transit and encrypt sensitive data at rest.",
-        "Access to production systems is restricted to authorized team members only.",
+        "Our apps and website are not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe we have unintentionally collected data from a child, please contact us immediately, and we will take appropriate steps to remove the information from our records.",
       ],
     },
     {
-      title: "Cookies",
+      title: "Changes to this Privacy Policy",
       content: [
-        "Our marketing website uses essential cookies to keep the site working (for example, remembering your cookie consent choice).",
-        "Optional cookie categories include analytics (usage statistics), preferences (such as theme settings), and marketing (campaign measurement).",
-        "You can accept all cookies, allow only essential cookies, or customize each category from the cookie banner. Change your choices anytime using the Cookies link in the site footer.",
+        "We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. The most recent version will always be available on our website. We encourage you to review this page periodically.",
       ],
     },
     {
       title: "Contact us",
       content: [
+        `If you have any questions or concerns regarding this Privacy Policy, please contact us at ${siteConfig.email.support}.`,
         `Omnitech, Inc. · ${siteConfig.company.headquarters.street}`,
         `${siteConfig.company.headquarters.city}, ${siteConfig.company.headquarters.state} ${siteConfig.company.headquarters.zip}, ${siteConfig.company.headquarters.country}`,
         `Phone: ${siteConfig.company.phone.display}`,
-        `Email: ${siteConfig.email.support} (support) · ${siteConfig.email.hello} (general)`,
         `Business hours: ${siteConfig.company.businessHours}`,
       ],
     },

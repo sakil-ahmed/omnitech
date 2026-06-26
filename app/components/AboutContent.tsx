@@ -56,7 +56,7 @@ export function AboutContent() {
               <StaggerItem key={stat.label}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="rounded-2xl border border-border bg-surface p-6 text-center"
+                  className="flex h-full flex-col justify-center rounded-2xl border border-border bg-surface p-6 text-center"
                 >
                   <p className="font-display text-3xl font-bold">
                     {stat.value}
@@ -78,11 +78,11 @@ export function AboutContent() {
           <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
             {companyValues.map((value) => (
               <StaggerItem key={value.title}>
-                <div className="rounded-2xl border border-border bg-background p-6">
+                <div className="card-equal rounded-2xl border border-border bg-background p-6">
                   <h3 className="font-display text-lg font-semibold text-accent">
                     {value.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                  <p className="card-equal-body mt-3 text-sm leading-relaxed text-muted">
                     {value.description}
                   </p>
                 </div>
@@ -103,10 +103,10 @@ export function AboutContent() {
           <Stagger className="mt-10 grid gap-6 md:grid-cols-2">
             {company.offices.map((office) => (
               <StaggerItem key={office.label}>
-                <div className="rounded-2xl border border-border bg-surface p-6">
+                <div className="card-equal rounded-2xl border border-border bg-surface p-6">
                   <p className="text-sm font-semibold text-accent">{office.label}</p>
                   <p className="font-display mt-2 text-lg font-semibold">{office.street}</p>
-                  <p className="mt-1 text-muted">
+                  <p className="card-equal-body mt-1 text-muted">
                     {office.city}, {office.state} {office.zip}, {company.headquarters.country}
                   </p>
                 </div>

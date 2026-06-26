@@ -30,7 +30,7 @@ export function Features() {
               <motion.div
                 whileHover={{ y: -6, boxShadow: "0 20px 50px rgba(0,128,96,0.12)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                className="group relative overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-surface to-background p-6"
+                className="card-equal group relative overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-surface to-background p-6"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <motion.div
@@ -45,7 +45,7 @@ export function Features() {
                 <h3 className="font-display relative mt-4 text-lg font-semibold group-hover:text-accent">
                   {feature.title}
                 </h3>
-                <p className="relative mt-2 text-sm leading-relaxed text-muted">
+                <p className="card-equal-body relative mt-2 text-sm leading-relaxed text-muted">
                   {feature.description}
                 </p>
               </motion.div>

@@ -18,11 +18,12 @@ export default function PrivacyPage() {
       <PageHero
         label="Legal"
         title="Privacy Policy"
-        description="How we handle your data when you use our website and Shopify apps."
+        description="How Omnitech collects, uses, discloses, and protects your data when you use our website and Shopify App Store applications."
       />
       <LegalPageContent
         lastUpdated={privacyPolicy.lastUpdated}
         intro={privacyPolicy.intro}
+        scope={privacyPolicy.scope}
         sections={privacyPolicy.sections}
       />
     </PageShell>

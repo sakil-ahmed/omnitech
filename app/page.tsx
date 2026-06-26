@@ -12,9 +12,10 @@ import { Blog } from "./components/Blog";
 import { CTA } from "./components/CTA";
 import { Footer } from "./components/Footer";
 import { createPageMetadata } from "@/app/lib/metadata";
+import { siteConfig } from "@/app/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Shopify Apps Built for Merchants",
+  title: siteConfig.tagline,
   description:
     "Omnitech builds and publishes Shopify apps on the App Store — starting with CartLift for AI upsells, with more apps coming soon.",
   path: "/",

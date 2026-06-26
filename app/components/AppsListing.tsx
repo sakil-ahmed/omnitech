@@ -30,10 +30,10 @@ export function AppsListing() {
           <Stagger className={`grid gap-6 ${getAppsGridClass()}`}>
             {apps.map((app) => (
               <StaggerItem key={app.slug}>
-                <Link href={`/apps/${app.slug}`}>
+                <Link href={`/apps/${app.slug}`} className="block h-full">
                   <motion.article
                     whileHover={{ y: -6 }}
-                    className={`card-shine group relative overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-surface to-background p-8 shadow-sm transition-shadow hover:border-accent/40 hover:shadow-xl ${app.glow}`}
+                    className={`card-shine card-equal group relative overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-surface to-background p-8 shadow-sm transition-shadow hover:border-accent/40 hover:shadow-xl ${app.glow}`}
                   >
                     <div className="flex items-start justify-between">
                       <AppIconBox app={app} />
@@ -48,14 +48,14 @@ export function AppsListing() {
                       {app.title}
                     </h2>
                     <p className="mt-1 text-sm font-medium text-accent/80">{app.tagline}</p>
-                    <p className="mt-3 leading-relaxed text-muted">{app.description}</p>
+                    <p className="card-equal-body mt-3 leading-relaxed text-muted">{app.description}</p>
                     {app.rating > 0 && (
                       <p className="mt-4 text-sm text-muted">
                         <span className="font-semibold text-foreground">{app.rating}★</span>
                         {" "}· {app.installs} installs
                       </p>
                     )}
-                    <p className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent">
+                    <p className="card-equal-footer mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent">
                       View app details
                       <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

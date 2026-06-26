@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Omnitech Inc.",
   shortName: "Omnitech",
-  tagline: "Shopify Apps Built for Merchants",
+  tagline: "Shopify Apps That Grow Your Store",
   companyTagline: "Software, Data, & AI Consulting",
   description:
     "Omnitech Inc. designs, builds, and publishes Shopify apps on the App Store—helping merchants automate workflows, save time, and grow their stores.",

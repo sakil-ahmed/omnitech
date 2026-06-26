@@ -359,6 +359,21 @@ body {
   transform: translateX(100%);
 }
 
+/* Equal-height cards in responsive grids */
+.card-equal {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.card-equal-body {
+  flex: 1 1 auto;
+}
+
+.card-equal-footer {
+  margin-top: auto;
+}
+
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
 .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }

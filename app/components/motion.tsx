@@ -112,7 +112,7 @@ export function StaggerItem({
   className?: string;
 }) {
   return (
-    <motion.div variants={staggerItem} className={className}>
+    <motion.div variants={staggerItem} className={`h-full ${className}`.trim()}>
       {children}
     </motion.div>
   );

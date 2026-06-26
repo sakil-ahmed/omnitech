@@ -181,13 +181,13 @@ export function AppDetail({ app }: AppDetailProps) {
               <StaggerItem key={feature.title}>
                 <motion.div
                   whileHover={{ y: -4, boxShadow: "0 16px 40px rgba(0,128,96,0.1)" }}
-                  className="rounded-2xl border border-border/80 bg-background p-6"
+                  className="card-equal rounded-2xl border border-border/80 bg-background p-6"
                 >
                   <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${app.color} text-white`}>
                     <AppIcon iconPath={feature.icon} className="h-5 w-5" strokeWidth={2} />
                   </div>
                   <h3 className="font-display mt-4 font-semibold">{feature.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{feature.description}</p>
+                  <p className="card-equal-body mt-2 text-sm leading-relaxed text-muted">{feature.description}</p>
                 </motion.div>
               </StaggerItem>
             ))}
@@ -206,12 +206,12 @@ export function AppDetail({ app }: AppDetailProps) {
           <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
             {app.steps.map((step, i) => (
               <StaggerItem key={step.title}>
-                <div className="relative rounded-2xl border border-border/80 bg-surface p-6 text-center shadow-sm">
+                <div className="card-equal relative rounded-2xl border border-border/80 bg-surface p-6 text-center shadow-sm">
                   <span className={`font-display text-4xl font-bold bg-gradient-to-br ${app.color} bg-clip-text text-transparent`}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-display mt-3 text-lg font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-sm text-muted">{step.description}</p>
+                  <p className="card-equal-body mt-2 text-sm text-muted">{step.description}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -357,10 +357,10 @@ export function AppDetail({ app }: AppDetailProps) {
             {app.plans.map((plan, i) => {
               const price = annual ? Math.round(plan.price * 0.83 * 100) / 100 : plan.price;
               return (
-                <FadeIn key={plan.name} delay={i * 0.1}>
+                <FadeIn key={plan.name} delay={i * 0.1} className="h-full">
                   <motion.div
                     whileHover={{ y: -6 }}
-                    className={`relative flex h-full flex-col rounded-2xl border p-8 ${
+                    className={`card-equal relative rounded-2xl border p-8 ${
                       plan.popular ? "border-accent/50 bg-surface shadow-xl shadow-accent/10 ring-1 ring-accent/20" : "border-border bg-background"
                     }`}
                   >
@@ -391,7 +391,7 @@ export function AppDetail({ app }: AppDetailProps) {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`mt-6 block rounded-full py-3 text-center text-sm font-semibold ${
+                      className={`card-equal-footer mt-6 block rounded-full py-3 text-center text-sm font-semibold ${
                         plan.popular ? "bg-gradient-to-r from-accent to-accent-light text-white shadow-lg" : "border border-border hover:border-accent hover:text-accent"
                       }`}
                     >
@@ -453,10 +453,10 @@ export function AppDetail({ app }: AppDetailProps) {
             <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {otherApps.map((other) => (
                 <StaggerItem key={other.slug}>
-                  <Link href={`/apps/${other.slug}`}>
+                  <Link href={`/apps/${other.slug}`} className="block h-full">
                     <motion.div
                       whileHover={{ y: -4 }}
-                      className="flex items-center gap-4 rounded-2xl border border-border bg-background p-4 transition-colors hover:border-accent/30"
+                      className="card-equal flex items-center gap-4 rounded-2xl border border-border bg-background p-4 transition-colors hover:border-accent/30"
                     >
                       <AppIconBox app={other} size="sm" />
                       <div>

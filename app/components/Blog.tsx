@@ -32,7 +32,7 @@ export function Blog() {
               <motion.article
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/80 bg-surface shadow-sm transition-shadow hover:border-accent/30 hover:shadow-xl hover:shadow-accent/10"
+                className="card-equal group overflow-hidden rounded-2xl border border-border/80 bg-surface shadow-sm transition-shadow hover:border-accent/30 hover:shadow-xl hover:shadow-accent/10"
               >
                 <div className={`h-2 bg-gradient-to-r ${post.gradient}`} />
                 <div className="flex flex-1 flex-col p-6">
@@ -45,8 +45,8 @@ export function Blog() {
                   <h3 className="font-display mt-4 text-lg font-semibold leading-snug transition-colors group-hover:text-accent">
                     {post.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{post.excerpt}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-muted">
+                  <p className="card-equal-body mt-2 text-sm leading-relaxed text-muted">{post.excerpt}</p>
+                  <span className="card-equal-footer mt-4 inline-flex items-center gap-1 text-sm font-semibold text-muted">
                     {post.status}
                   </span>
                 </div>
