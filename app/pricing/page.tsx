@@ -8,12 +8,12 @@ import { createPageMetadata } from "@/app/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Pricing",
   description:
-    "Simple, transparent pricing for Omnitech Shopify apps. 7-day free trial on paid plans, billed securely through Shopify.",
+    "Simple, transparent pricing for Omnitech Shopify apps. Free tiers and paid plans, billed securely through Shopify.",
   path: "/pricing",
   keywords: [
     "Shopify app pricing",
+    "CartLift pricing",
     "Shopify subscription plans",
-    "free trial Shopify apps",
     "Omnitech pricing",
   ],
 });
@@ -24,7 +24,7 @@ export default function PricingPage() {
       <PageHero
         label="Pricing"
         title="Simple plans for every store"
-        description="Choose the right plan for your store. All apps include a 7-day free trial."
+        description="Choose the right plan per app. Pricing tabs update automatically as we add new apps to our catalog."
       />
       <Pricing hideHeader />
       <section className="border-t border-border bg-surface py-12">

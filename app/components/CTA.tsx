@@ -34,11 +34,11 @@ export function CTA() {
                   viewport={{ once: true }}
                   className="font-display text-3xl font-bold tracking-tight md:text-4xl"
                 >
-                  Need a custom Shopify app or theme?
+                  Need a custom Shopify app?
                 </motion.h2>
                 <p className="mx-auto mt-4 max-w-lg text-emerald-100">
-                  We build public apps for the App Store, private apps for agencies and brands, and
-                  custom Online Store 2.0 themes. Tell us your idea—we&apos;ll handle the rest.
+                  We build public apps for the App Store and private apps for agencies and
+                  brands. Tell us your idea—we&apos;ll handle the rest.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <motion.a

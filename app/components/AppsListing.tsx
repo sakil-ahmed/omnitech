@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { apps } from "@/app/data/apps";
+import { apps, getAppsGridClass } from "@/app/data/apps";
 import { AppIconBox } from "@/app/components/AppIcon";
 import { FadeIn, Stagger, StaggerItem } from "@/app/components/motion";
 import { company } from "@/app/data/site-content";
@@ -27,7 +27,7 @@ export function AppsListing() {
 
       <section className="pb-24">
         <div className="mx-auto max-w-6xl px-6">
-          <Stagger className="grid gap-6 sm:grid-cols-2">
+          <Stagger className={`grid gap-6 ${getAppsGridClass()}`}>
             {apps.map((app) => (
               <StaggerItem key={app.slug}>
                 <Link href={`/apps/${app.slug}`}>

@@ -60,7 +60,7 @@ export function AboutContent() {
                 >
                   <p className="font-display text-3xl font-bold">
                     {stat.value}
-                    {"suffix" in stat ? stat.suffix : ""}
+                    {stat.suffix ?? ""}
                   </p>
                   <p className="mt-1 text-sm text-muted">{stat.label}</p>
                 </motion.div>
@@ -121,7 +121,7 @@ export function AboutContent() {
           <FadeIn>
             <h2 className="font-display text-3xl font-bold">Want to work with us?</h2>
             <p className="mx-auto mt-4 max-w-lg text-muted">
-              Whether you need a custom Shopify app, a bespoke theme, want to partner with us, or
+              Whether you need a custom Shopify app, want to partner with us, or
               have feedback on our products—we&apos;d love to hear from you.
             </p>
             <Link

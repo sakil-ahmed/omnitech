@@ -8,7 +8,7 @@ import { pricingNotes } from "@/app/data/site-content";
 import { FadeIn } from "./motion";
 
 export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
-  const [activeApp, setActiveApp] = useState(liveApps[0]?.id ?? "ordernotify");
+  const [activeApp, setActiveApp] = useState(liveApps[0]?.id ?? "cartlift");
   const [annual, setAnnual] = useState(false);
   const plans = appPlansMap[activeApp] ?? [];
   const tabLayoutId = hideHeader ? "activeTabPage" : "activeTab";
@@ -31,6 +31,7 @@ export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
             {pricingNotes.billing}. {pricingNotes.trial}. {pricingNotes.cancel}.
           </p>
 
+          {liveApps.length > 1 && (
           <div className="mt-8 flex flex-wrap justify-center gap-2">
             {liveApps.map((app) => (
               <motion.button
@@ -56,6 +57,7 @@ export function Pricing({ hideHeader = false }: { hideHeader?: boolean }) {
               </motion.button>
             ))}
           </div>
+          )}
 
           <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-border bg-surface p-1">
             <button

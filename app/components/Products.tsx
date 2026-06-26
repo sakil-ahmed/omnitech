@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { apps } from "@/app/data/apps";
+import { apps, getAppsGridClass } from "@/app/data/apps";
 import { AppIconBox } from "@/app/components/AppIcon";
 import { FadeIn, Stagger, StaggerItem } from "./motion";
 
@@ -21,8 +21,8 @@ export function Products() {
               Built for Shopify merchants
             </h2>
             <p className="mt-3 max-w-lg text-muted">
-              Each app solves one problem really well. Install from the Shopify
-              App Store and start using in minutes.
+              Each app solves one problem really well. Install from the Shopify App Store and
+              start using in minutes.
             </p>
           </FadeIn>
           <FadeIn delay={0.15}>
@@ -37,7 +37,7 @@ export function Products() {
           </FadeIn>
         </div>
 
-        <Stagger className="mt-12 grid gap-5 sm:grid-cols-2">
+        <Stagger className={`mt-12 grid gap-5 ${getAppsGridClass()}`}>
           {apps.map((app) => (
             <StaggerItem key={app.slug}>
               <Link href={`/apps/${app.slug}`}>

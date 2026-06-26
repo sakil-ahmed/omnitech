@@ -1,6 +1,8 @@
 import { siteConfig } from "@/app/lib/site";
+import { apps, liveApps } from "@/app/data/apps";
 
 const { company: co } = siteConfig;
+const flagshipApp = liveApps[0] ?? apps[0];
 
 export const company = {
   name: siteConfig.name,
@@ -9,19 +11,21 @@ export const company = {
   companyTagline: siteConfig.companyTagline,
   description: siteConfig.description,
   shortDescription:
-    "Omnitech Inc. delivers software, data, and AI consulting—and builds Shopify apps and custom themes that help merchants run better stores.",
+    "Omnitech Inc. designs, builds, and publishes Shopify apps on the App Store—starting with CartLift and growing our catalog for merchants worldwide.",
   location: co.location,
   founded: co.founded,
   partnerLabel: co.partners.join(" · "),
   businessHours: co.businessHours,
   responseTime: "Within 24 hours on business days (Sun–Thu, BST)",
   mission:
-    "Deliver tailored technology solutions—and build Shopify apps and themes that merchants actually love to use.",
+    "Deliver tailored technology solutions—and build Shopify apps that merchants actually love to use.",
   aboutTitle: `Building since ${co.founded}`,
   aboutParagraphs: [
-    `Founded in ${co.founded}, Omnitech Inc. builds Shopify apps, custom themes, and software solutions from Tangail, Dhaka, Bangladesh—serving merchants and businesses worldwide. As a Microsoft Partner and Shopify App Partner, our culture centers on an eagerness to learn, humility, and a passion for solving complex problems.`,
-    "We cover the full software development lifecycle—business analysis, design, development, quality assurance, and maintenance. Our Shopify studio extends that expertise to merchants worldwide: we design, build, and publish focused apps on the App Store—and craft custom Online Store 2.0 themes for brands that need a storefront built to convert.",
-    "From order notifications to bulk editing, review collection, and volume discounts—each app solves one workflow exceptionally well—simple, reliable, and built with merchants in mind.",
+    `Founded in ${co.founded}, Omnitech Inc. builds Shopify apps from Tangail, Dhaka, Bangladesh—serving merchants worldwide. As a Microsoft Partner and Shopify App Partner, we design focused apps that solve one workflow exceptionally well.`,
+    "We cover the full software development lifecycle—business analysis, design, development, quality assurance, and maintenance. Our Shopify app studio publishes on the App Store and ships updates as Shopify's platform evolves.",
+    flagshipApp
+      ? `Our first app, ${flagshipApp.title}, brings AI upsells, bundles, and cross-sells across product, cart, checkout, and post-purchase—with free, Pro, and Premium plans for stores of every size. More apps are on the way.`
+      : "We publish focused Shopify apps on the App Store—simple, reliable, and built with merchants in mind.",
   ],
   headquarters: co.headquarters,
   offices: co.offices,
@@ -32,10 +36,10 @@ export const company = {
 
 export const emails = siteConfig.email;
 
-export const companyStats = [
+export const companyStats: { value: string; label: string; suffix?: string }[] = [
   { value: co.founded, label: "Founded" },
-  { value: "5", label: "Shopify apps", suffix: "+" },
-  { value: "1.2K+", label: "Store installs" },
+  { value: String(apps.length), label: apps.length === 1 ? "Shopify app" : "Shopify apps", suffix: "+" },
+  { value: "150+", label: "Store installs" },
   { value: "4.9★", label: "Average app rating" },
   { value: "99.9%", label: "App uptime" },
 ];
@@ -44,7 +48,7 @@ export const heroStats = companyStats.slice(0, 4);
 
 export const trustItems = [
   "Microsoft Partner",
-  "7-day free trial",
+  "Free plan available",
   "Billed via Shopify",
   "GDPR ready",
 ];
@@ -120,14 +124,8 @@ export const platformFeatures = [
   {
     title: "Built on Shopify APIs",
     description:
-      "GraphQL Admin API, webhooks, Billing API, theme app extensions, and Liquid—we use the full Shopify platform.",
+      "GraphQL Admin API, webhooks, Billing API, and app extensions—we use the full Shopify platform.",
     icon: "M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5",
-  },
-  {
-    title: "Custom theme development",
-    description:
-      "We build Online Store 2.0 themes from scratch—performance-tuned, brand-aligned, and ready for app blocks.",
-    icon: "M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z",
   },
   {
     title: "Engineering you can trust",
@@ -146,28 +144,24 @@ export const platformFeatures = [
 export const faqs = [
   {
     question: "How do I install your Shopify apps?",
-    answer:
-      "Visit the Shopify App Store, search for the app (e.g. OrderNotify Pro), and click Install. Authorize the requested permissions and the app opens inside your Shopify admin—ready to configure in minutes.",
+    answer: flagshipApp
+      ? `Visit the Shopify App Store, search for the app (e.g. ${flagshipApp.title}), and click Install. Authorize the requested permissions and configure the app from your Shopify admin—most stores go live in minutes.`
+      : "Visit the Shopify App Store, find an Omnitech app, and click Install. Authorize the requested permissions and the app opens inside your Shopify admin.",
   },
   {
     question: "How does billing work?",
     answer:
-      "All subscriptions are billed through Shopify's billing API. Charges appear on your regular Shopify invoice. Paid plans include a 7-day free trial, and you can cancel anytime from Apps → Manage in your admin.",
+      "Plans are billed through Shopify's billing API and appear on your regular Shopify invoice. Each app has its own pricing—many include a free tier or trial on paid plans. Cancel anytime from Apps → Manage in your admin.",
   },
   {
-    question: "Will the app slow down my store?",
+    question: "Will your apps slow down my store?",
     answer:
-      "No. Our apps run as embedded admin tools and use lightweight storefront scripts only when needed (e.g. review widgets). We follow Shopify performance best practices and test on live stores.",
+      "No. Our storefront widgets load asynchronously and are optimized for Core Web Vitals. Admin tools run embedded in Shopify and follow Shopify performance best practices.",
   },
   {
     question: "Do you offer custom Shopify app development?",
     answer:
       `Yes. Omnitech Inc. builds public apps for the App Store and private apps for agencies and brands. Contact us at ${emails.hello} or call ${company.phone.display} with your requirements.`,
-  },
-  {
-    question: "Do you build custom Shopify themes?",
-    answer:
-      `Yes. We design and develop Online Store 2.0 themes—custom sections, performance optimization, and app block support. Contact us at ${emails.hello} or call ${company.phone.display} to discuss your storefront.`,
   },
   {
     question: "What happens when I uninstall an app?",
@@ -177,7 +171,7 @@ export const faqs = [
   {
     question: "How can I get support?",
     answer:
-      `Email ${emails.support} or call ${company.phone.display}. We respond within 24 hours on business days (Sun–Thu, BST). Pro plan customers get priority support.`,
+      `Email ${emails.support} or call ${company.phone.display}. We respond within 24 hours on business days (Sun–Thu, BST). Paid plan customers get priority support.`,
   },
   {
     question: "Where is Omnitech based?",
@@ -219,8 +213,6 @@ export const blogPosts = [
 export const marqueeItems = [
   "Microsoft Partner",
   "Shopify App Store",
-  "Shopify Themes",
-  "Online Store 2.0",
   "Polaris UI",
   "GraphQL Admin API",
   "Custom Software",
@@ -264,17 +256,14 @@ export const contactSubjects = [
   "Billing question",
   "Refund request",
   "Custom app development",
-  "Custom theme development",
   "Custom software / consulting",
   "Partnership",
-  "Stock Alert waitlist",
   "Other",
 ];
 
 export const footerCompanyLinks = [
   { label: "About", href: "/about" },
   { label: "Our Apps", href: "/apps" },
-  { label: "Our Themes", href: "/themes" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
@@ -289,7 +278,7 @@ export const footerResourceLinks = [
 ];
 
 export const pricingNotes = {
-  trial: "7-day free trial on all paid plans",
+  trial: "Free tiers & trials on select paid plans",
   billing: "Billed through Shopify",
   cancel: "Cancel anytime from your Shopify admin",
   annualDiscountPercent: 17,
